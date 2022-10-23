@@ -120,3 +120,71 @@ btnLogin.addEventListener('click', function (e) {
   e.preventDefault();
   accounts.find(acc => acc.owner === inputLoginUserName);
 });
+
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+console.log(movements);
+//EQUALITY
+console.log(movements.includes(-130));
+
+//Condition
+console.log(movements.some(mov => mov === -130));
+const anyDeposit = movements.some(mov => mov > 1500);
+console.log(anyDeposits);
+
+//Every
+console.log(movements.every(mov => mov > 0));
+
+//Sepaarate callback
+const deposit = mov => mov > 0;
+console.log(movements.some(deposit));
+
+//Flat
+const arr = [[1, 2, 3], [4, 5, 6], 7, 8];
+console.log(arr.flat());
+const arrDeep = [[[1, 2], 3], [4, [5, 6]], 7, 8];
+console.log(arrDeep.flat(2)); //Flat two levels
+
+// flat
+const overalBalance = accounts
+  .map(acc => acc.movements)
+  .flat()
+  .reduce((acc, mov) => acc + mov, 0);
+console.log(overalBalance);
+
+// flatMap
+const overalBalance2 = accounts
+  .flatMap(acc => acc.movements)
+  .reduce((acc, mov) => acc + mov, 0);
+console.log(overalBalance2);
+
+let numbers = [0, 1, 2, 3, 10, 20, 30];
+numbers.sort();
+console.log(numbers);
+[0, 1, 10, 2, 20, 3, 30];
+
+console.log(movements);
+
+//return < 0, a, b keep order
+//return > 0, a, b switch order
+
+/* //Ascending
+
+//Instead of this
+movements.sort((a, b) => {
+  if (a > b) return 1;
+  if (b < a) return -1;
+});
+//We write this
+movements.sort((a, b) => a - b);
+
+//Descending
+
+//instead of this
+movements.sort((a, b) => {
+  if (a > b) return -1;
+  if (b < a) return 1;
+});
+//we write this
+movements.sort((a, b) => b - a);
+ */
+console.log(movements);
