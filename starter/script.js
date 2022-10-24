@@ -138,11 +138,11 @@ console.log(movements.every(mov => mov > 0));
 const deposit = mov => mov > 0;
 console.log(movements.some(deposit));
 
-//Flat
+/* //Flat
 const arr = [[1, 2, 3], [4, 5, 6], 7, 8];
 console.log(arr.flat());
 const arrDeep = [[[1, 2], 3], [4, [5, 6]], 7, 8];
-console.log(arrDeep.flat(2)); //Flat two levels
+console.log(arrDeep.flat(2)); //Flat two levels */
 
 // flat
 const overalBalance = accounts
@@ -186,5 +186,37 @@ movements.sort((a, b) => {
 });
 //we write this
 movements.sort((a, b) => b - a);
- */
-console.log(movements);
+ 
+console.log(movements);*/
+// More Ways of Creating and Filling Arrays
+const arr = [1, 2, 3, 4, 5, 6, 7];
+console.log(new Array(1, 2, 3, 4, 5, 6, 7));
+
+//empty arrays + fill method
+const x = new Array(7);
+console.log(x);
+
+x.fill(1, 3, 5);
+arr.fill(23, 4, 6);
+console.log(arr);
+
+//Array.from
+const y = Array.from({ length: 7 }, () => 1);
+console.log(y);
+
+const z = Array.from({ length: 7 }, (_, i) => i + 1);
+console.log(z);
+/* 
+const movementsUI = Array.from(document.querySelectorAll('.movements__value'));
+console.log(movementsUI); */
+
+labelBalance.addEventListener('click', function () {
+  const movementsUI = Array.from(
+    document.querySelectorAlll('.movements__value'),
+    el => Number(el.texContent.replace('€', ''))
+  );
+
+  console.log(movementsUI);
+
+  const movementsUI2 = [...document.querySelectorAlll('.movements__value')];
+});
